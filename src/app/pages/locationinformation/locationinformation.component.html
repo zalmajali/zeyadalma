@@ -1,0 +1,137 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  	<ion-buttons slot="{{menuDirection}}">
+       <div (click)="functionClosePage()"><ion-icon name="close" class="iconStyle"></ion-icon></div>
+    </ion-buttons>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <div  class="workordersName padding-top_5 padding-left_5 padding-right_5">	
+    	<div class="padding-left_5 padding-right_5" *ngIf="governorateName!=0 || cityName!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="6" *ngIf="governorateName!=0" class="text-align_start">
+                        <div class="workEventName">{{governorate_name}}</div>
+                        <div class="workordersInformation">{{governorateName}}</div>
+                    </ion-col>
+                    <ion-col size="6" *ngIf="cityName!=0" class="text-align_start">
+                        <div class="workEventName">{{city_name}}</div>
+                        <div class="workordersInformation">{{cityName}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        <div class="padding-left_5 padding-right_5" *ngIf="districtName!=0 || neighborhoodName!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="6" class="text-align_start" *ngIf="districtName!=0">
+                        <div class="workEventName">{{district_name}}</div>
+                        <div class="workordersInformation">{{districtName}}</div>
+                    </ion-col>
+                    <ion-col size="6" class="text-align_start" *ngIf="neighborhoodName!=0">
+                        <div class="workEventName">{{neighborhood_name}}</div>
+                        <div class="workordersInformation">{{neighborhoodName}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        <div class="padding-left_5 padding-right_5" *ngIf="streetNo!=0 || streetName!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="6" class="text-align_start" *ngIf="streetNo!=0">
+                        <div class="workEventName">{{street_no}}</div>
+                        <div class="workordersInformation">{{streetNo}}</div>
+                    </ion-col>
+                    <ion-col size="6" class="text-align_start" *ngIf="streetName!=0">
+                        <div class="workEventName">{{street_name}}</div>
+                        <div class="workordersInformation">{{streetName}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        <div class="padding-left_5 padding-right_5" *ngIf="addressLine1!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="12" class="text-align_start">
+                        <div class="workEventName">{{address_one}}</div>
+                        <div class="workordersInformation">{{addressLine1}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        <div class="padding-left_5 padding-right_5" *ngIf="addressLine2!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="12" class="text-align_start">
+                        <div class="workEventName">{{address_tow}}</div>
+                        <div class="workordersInformation">{{addressLine2}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+         <div class="padding-left_5 padding-right_5" *ngIf="addressLine2!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="12" class="text-align_start">
+                        <div class="workEventName">{{address_tow}}</div>
+                        <div class="workordersInformation">{{addressLine2}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        <div class="padding-left_5 padding-right_5" *ngIf="zones.length!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="12" class="text-align_start">
+                        <div class="workEventName">{{zones_names}}</div>
+                        <div class="workordersInformation" *ngFor="let items of zones">{{items}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        
+        <div class="padding-left_5 padding-right_5" *ngIf="propertyName!=0 || programsName!=0 || routeGeolocation!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="6" class="text-align_start" *ngIf="propertyName!=0">
+                        <div class="workEventName">{{property_name}}</div>
+                        <div class="workordersInformation">{{propertyName}}</div>
+                    </ion-col>
+                    <ion-col size="4" class="text-align_start" *ngIf="programsName!=0">
+                        <div class="workEventName">{{programs_name}}</div>
+                        <div class="workordersInformation">{{programsName}}</div>
+                    </ion-col>
+                    <ion-col size="4" class="text-align_start" *ngIf="routeGeolocation!=0">
+                        <div class="workEventName">{{actual_location}}</div>
+                        <div class="workordersInformation">{{routeGeolocation}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+        <div class="padding-left_5 padding-right_5" *ngIf="propertyNumber!=0 || barcode!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="6" class="text-align_start" *ngIf="propertyNumber!=0">
+                        <div class="workEventName">{{property_number}}</div>
+                        <div class="workordersInformation">{{propertyNumber}}</div>
+                    </ion-col>
+                    <ion-col size="6" class="text-align_start" *ngIf="barcode!=0">
+                        <div class="workEventName">{{barcode_data}}</div>
+                        <div class="workordersInformation">{{barcode}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+          <div class="padding-left_5 padding-right_5" *ngIf="privateNote!=0">
+           <ion-grid style="padding:0px">
+                <ion-row style="padding:0px">
+                    <ion-col size="12" class="text-align_start">
+                        <div class="workEventName">{{private_note}}</div>
+                        <div class="workordersInformation">{{privateNote}}</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> 
+        </div>
+    </div>
+</ion-content>

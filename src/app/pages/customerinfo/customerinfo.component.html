@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  	<ion-buttons slot="{{menuDirection}}">
+       <div (click)="functionClosePage()"><ion-icon name="close" class="iconStyle"></ion-icon></div>
+    </ion-buttons>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <div  class="workordersName padding-top_5 padding-left_5 padding-right_5">	
+    	<div>
+        <ion-grid style="padding:0px">
+            <ion-row style="padding:0px">
+                <ion-col size="12" class="text-align_start">
+                    <div class="padding-left_5 padding-right_5" *ngIf="firstName!=0">
+                       <div class="workEventName">{{workorders_customers_full_name}}</div>
+                       <div class="workordersInformation">{{firstName}} {{middleName}} {{lastName}}</div>
+                    </div>
+                    <div class="padding-left_5 padding-right_5" *ngIf="firstNameEx!=0">
+                       <div class="workEventName">{{extra}} {{workorders_customers_full_name}}</div>
+                       <div class="workordersInformation">{{firstNameEx}} {{middleNameEx}} {{lastNameEx}}</div>
+                    </div>
+                    <div class="padding-left_5 padding-right_5">
+                       <ion-grid style="padding:0px">
+                            <ion-row style="padding:0px">
+                                <ion-col size="6" class="text-align_start" *ngIf="mobile!=0">
+                                    <div class="workEventName">{{workorders_customers_Mobile}}</div>
+                                    <div class="workordersInformation">{{mobile}}   <ion-icon name="call" class="menuIcon" (click)="functionCallNumber(mobile)"></ion-icon></div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="extraMobile!=0">
+                                    <div class="workEventName">{{extra}} {{workorders_customers_Mobile}}</div>
+                                    <div class="workordersInformation">{{extraMobile}}   <ion-icon name="call" class="menuIcon" (click)="functionCallNumber(extraMobile)"></ion-icon></div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="businessName!=0">
+                                    <div class="workEventName">{{workorders_customers_businessName}}</div>
+                                    <div class="workordersInformation">{{businessName}}</div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="phone!=0">
+                                    <div class="workEventName">{{workorders_customers_extraPhone}}</div>
+                                    <div class="workordersInformation">{{phone}}   <ion-icon name="call" class="menuIcon" (click)="functionCallNumber(phone)"></ion-icon></div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="businessNameEx!=0">
+                                    <div class="workEventName">{{extra}} {{workorders_customers_businessName}}</div>
+                                    <div class="workordersInformation">{{businessNameEx}}</div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="extraPhone!=0">
+                                    <div class="workEventName">{{extra}} {{workorders_customers_extraPhone}}</div>
+                                    <div class="workordersInformation">{{extraPhone}}   <ion-icon name="call" class="menuIcon" (click)="functionCallNumber(extraPhone)"></ion-icon></div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="fax!=0">
+                                    <div class="workEventName">{{workorders_customers_extraFax}}</div>
+                                    <div class="workordersInformation">{{fax}}</div>
+                                </ion-col>
+                                <ion-col size="6" class="text-align_start" *ngIf="extraFax!=0">
+                                    <div class="workEventName">{{extra}} {{workorders_customers_extraFax}}</div>
+                                    <div class="workordersInformation">{{extraFax}}</div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid> 
+                    </div>
+                    <div class="padding-left_5 padding-right_5" *ngIf="accountNotes!=0">
+                       <div class="workEventName">{{private_note}}</div>
+                       <div class="workordersInformation">{{accountNotes}}</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    	</div>
+    </div>
+</ion-content>

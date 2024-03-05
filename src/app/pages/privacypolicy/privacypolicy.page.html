@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  	<ion-buttons slot="{{menuDirection}}">
+       <div (click)="functionOpenMenue()"><ion-icon name="menu" class="iconStyle"></ion-icon></div>
+    </ion-buttons>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+<div class="margin_20">	
+	<div class="text-align_center">
+    	<img src="../../assets/images/FieldServe-Elite-Logo.png" class="imageLogo">
+    </div>
+   <div class="padding-top_10 content" [innerHTML]="pageInformation">
+   </div> 
+</div>
+</ion-content>
